@@ -16,13 +16,36 @@ continue working on the second file.
 How can you use the staging area to make sure you have one commit per logical
 change?
 
+I can add files to staging area, take diff with last commit or working directory
+and if I find some odd change I can call git reset [filename] to unstage the file
+
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+If I want to try an experimental feature or try some change which may break the
+system, I can create a branch for it and make changes to it. So my master branch,
+which I know works perfectly, is unchanged while I am working on a separate copy.
+
 How do the diagrams help you visualize the branch structure?
+
+Every commit remembers it's immediate parent. So if I want to work on an experimental
+feature on a particular commit then we can create a branch on that commit to so that
+it is not lost somewhere. This is very hard to understand without diagrams.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+When we are done working on an experimental change and we are sure that it is
+working, we would naturally want to add it into the production environment.
+This can be done using the merge feature. Merging branches combines commits
+from both branches.
+
 What are the pros and cons of Git’s automatic merging vs. always doing merges
 manually?
+
+Pros:
+ Automatic merging makes my life simpler
+ Manual merging gives me more control over conflicts
+Cons:
+ Automatic merging cannot resolve conflicts
+ Manual merging is time consuming and error prone
